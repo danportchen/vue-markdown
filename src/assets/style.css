@@ -1,0 +1,13 @@
+body{
+background: #0052D4;  
+background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); 
+background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); 
+
+font-family: 'Libre Franklin', sans-serif;
+height: 2000px;
+}
+
+.light{
+  color: white;
+  text-shadow: 1px 1px 5px rgba(150, 150, 150, 0.9);
+}

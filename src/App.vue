@@ -1,29 +1,50 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <div class="contain">
+      <div class="row mt-4">
+        <div class="col text-center">
+          <h1 class="light">Mark Down Preview</h1>
+        </div>
+      </div>
+      <div class="row m-4">
+        <div class="col-sm-6">
+          <h4 class="light text-center">Markdown</h4>
+          <textarea class="info" v-model="markdown"/>
+        </div>
+        <div class="col-sm-6">
+          <h4 class="light text-center">Preview</h4>
+          <div :key="markdown" class="info" 
+          v-markdown >
+            {{markdown}}
+          </div>
+        </div>
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+  export default {
+    name: 'app',
+    data() {
+      return {
+        markdown: '',
+      };
+    },
   }
+
+
+</script>
+
+<style scoped>
+textarea {
+  resize: none;
+  border: 2px solid orange;
+  outline: none;
+}
+.info{
+  height: 400px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 </style>
